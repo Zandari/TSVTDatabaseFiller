@@ -29,7 +29,7 @@ class _FileType(Enum):
 
 class TSVTReader(object):
     def __init__(self, file_like):
-        data_str = StringIO(file_like.read().decode('utf-8'))
+        data_str = StringIO(file_like.read().decode('utf-8-sig'))
         self._reader = csv.reader(data_str, delimiter='\t')
         next(self._reader)  # skip title
 
